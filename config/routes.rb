@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
 
+  get 'items/create'
+
   devise_for :users
 
   root 'welcome#index'
 
-  resources :users
+  resources :users do
+    resources :items, only: [:create]
+  end
 
 
   # The priority is based upon order of creation: first created -> highest priority.

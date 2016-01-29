@@ -12,7 +12,9 @@ class User < ActiveRecord::Base
   validates :email, presence: true
   validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, :multiline => true
   validate :validate_username
+  has_many :items
 
+  
   def validate_username
     if User.where(email: username).exists?
       errors.add(:username, :invalid)
