@@ -27,8 +27,8 @@ gem 'jbuilder', '~> 2.0'
 
 # Devise is a flexivle authentication solution for Rails based on Wardit
 gem 'devise'
-
-
+# Data::Faker library that generates fake data.
+gem 'faker'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 
