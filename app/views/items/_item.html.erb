@@ -1,3 +1,7 @@
 <div id=<%="item-#{item.id}"%>>
-  <h4 class='list-group-item-heading'><%= item.name %></h4>
+  <div class="media">
+    <div class="media-body">
+      <p class='list-group-item-heading'><%= item.name %> | <%= link_to "Complete", [current_user, item], method: :delete, class: 'glyphicon glyphicon-ok', remote: true  %> </p>
+    </div>
+  </div>
 </div>

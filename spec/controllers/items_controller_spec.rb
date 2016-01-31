@@ -20,7 +20,19 @@ RSpec.describe ItemsController, type: :controller do
       post :create, item: {name: "Random Item"}
       expect(assigns(:item)).to eq Item.last
     end
-
   end
 
+  describe "DELETE destroy" do
+    it "deletes the item" do
+      delete :destroy, format: :js, id: my_item.id
+      count = Item.where({id: my_item.id}).count
+      expect(response).to have_http_status(:success)
+      expect(count).to eq 0
+    end
+
+    it "redirects to Http success after delete item" do
+      delete :destroy, format: :js, id: my_item.id
+      expect(response).to have_http_status(:success)
+    end
+  end
 end
