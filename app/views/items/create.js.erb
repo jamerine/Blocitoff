@@ -1,6 +1,6 @@
 <% if @item.valid? %>
   $('.flash').prepend("<div class='alert alert-success'><button type='button' class='close' data-dismiss='alert'>&times;</button><%= @message %></div>");
-  $('.js-item').prepend("<%= escape_javascript(render(@user)) %>");
+  $('.js-items').prepend("<%= escape_javascript(render(@item)) %>");
   $('.new-item').html("<%= escape_javascript(render partial: 'items/form', locals: { user: @user}) %>");
  <% else %>
    $('.flash').prepend("<div class='alert alert-danger'><button type='button' class='close' data-dismiss='alert'>&times;</button><%= @message %></div>");

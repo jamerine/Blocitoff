@@ -4,6 +4,7 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
     @item.user_id = current_user.id
     @new_item = Item.new
+    @user = current_user
 
     if @item.save
       @message = "Item was saved."
