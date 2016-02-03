@@ -32,6 +32,7 @@ gem 'faker'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+gem 'whenever', :require => false
 
 
 group :production do
