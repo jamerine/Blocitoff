@@ -11,6 +11,7 @@ class ItemsController < ApplicationController
     else
       @message = "There was an error saving the item.  Please try again."
     end
+    
 
     respond_to do |format|
       format.html { result ? flash[:notice] = @message : flash[:alert] = @message }
